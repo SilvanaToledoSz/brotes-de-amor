@@ -9,29 +9,6 @@ class Planta {
         this.vendido = false;
         
     }
-
-    // Arroja el valor de IVA del producto
-
-    valorIva () {
-        return this.valorBruto * 0,21;
-    }
-
-    mostrarIva () {
-        alert("El valor IVA del producto " + this.nombre + " es " + this.valorIva ())
-    }
-
-    // Arroja el valor del producto con el IVA incluido
-
-    sumaIva () {
-        return this.valorBruto * 1.21;
-    }
-
-    mostrarPrecio () {
-        alert("El valor de venta del producto " + this.nombre + " es " + this.precioVenta)
-    }   
-
-    
-
         
 }
 
