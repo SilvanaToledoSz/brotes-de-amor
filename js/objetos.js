@@ -10,7 +10,7 @@ class Planta {
         
     }
 
-    // Arrooja el valor de IVA del producto
+    // Arroja el valor de IVA del producto
 
     valorIva () {
         return this.valorBruto * 0,21;
@@ -28,6 +28,10 @@ class Planta {
 
     mostrarPrecio () {
         alert("El valor de venta del producto " + this.nombre + " es " + this.precioVenta)
-    }    
+    }   
+
     
+
+        
 }
+
