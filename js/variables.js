@@ -1,5 +1,3 @@
-debugger
-
 let usuario = prompt("Hola ¿cómo te llamas?")
 
 
