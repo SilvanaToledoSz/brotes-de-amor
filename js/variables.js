@@ -5,7 +5,7 @@ let usuario = prompt("Hola ¿cómo te llamas?")
 if ((usuario !="") && (usuario != null)) {
 
     // Consultamos si quiere comprar
-    let comprar = confirm("Hola " + usuario + " querés hacer una compra?" )
+    let comprar = confirm("Hola " + usuario + " ¿querés hacer una compra?" )
 
         // Condicional si quiere comprar
         if (comprar == true) {
@@ -22,10 +22,10 @@ if ((usuario !="") && (usuario != null)) {
                         case planta1.nombre:
                             
                             if (planta1.stock >= 1) {
-                                alert("Nos quedan " + planta1.stock + " unidades . Podés avanzar con la compra")
+                                alert("Nos quedan " + planta1.stock + " unidades. Podés avanzar con la compra.")
 
                                 //Informo el precio sin iva
-                                alert(`El precio sin IVA es ${planta1.valorBruto}`)
+                                alert(`El precio sin IVA es $ ${planta1.valorBruto}`)
                                 
                                 //Creo función para calcular valor IVA
                                 
@@ -39,7 +39,7 @@ if ((usuario !="") && (usuario != null)) {
                                 valorIva()
                                 
                                 //Informo el valor con IVA
-                                alert(`El precio con IVA incluido es ${precioIva}`)
+                                alert(`El precio con IVA incluido es $ ${precioIva}`)
 
                                 //Consulto cuántas unidades quiere
                                 let cantidad = parseInt(prompt(`¿Cuántas unidades querés de ${productoElegido}?`))
@@ -60,7 +60,7 @@ if ((usuario !="") && (usuario != null)) {
                                         nroUnidades()
                                         
                                         //Informo precio total
-                                        alert(`El precio total por ${cantidad} unidades es ${precioUnidades}`)
+                                        alert(`El precio total por ${cantidad} unidades es $ ${precioUnidades}`)
 
                                             //Consulto si quiere avanzar con la compra
 
@@ -71,14 +71,16 @@ if ((usuario !="") && (usuario != null)) {
 
                                                 // Consulto forma de pago
 
-                                                formaPago = prompt(`¡Excelente ${usuario}. Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
+                                                formaPago = prompt(`¡Excelente ${usuario}! 
+                                                Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál perferís?`)
 
                                                 switch (formaPago.toUpperCase()) {
 
 
                                                     case "EFECTIVO":
                                                     
-                                                    alert(`¡Excelente ${usuario}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`¡Excelente ${usuario}!
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -89,7 +91,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioUnidades, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioUnidades, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -140,7 +142,8 @@ if ((usuario !="") && (usuario != null)) {
                                                     //Invoco la función
                                                     costoMP()
 
-                                                    alert(`El valor final con el valor de Mercado Pago incluido es: ${precioMP}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`El valor final con el valor de Mercado Pago incluido es: $ ${precioMP}. 
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -151,7 +154,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioMP, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioMP, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -215,7 +218,7 @@ if ((usuario !="") && (usuario != null)) {
                                 alert("Nos quedan " + planta2.stock + " unidades . Podés avanzar con la compra")
 
                                 //Informo el precio sin iva
-                                alert(`El precio sin IVA es ${planta2.valorBruto}`)
+                                alert(`El precio sin IVA es $ ${planta2.valorBruto}`)
                                 
                                 //Creo función para calcular valor IVA
                                 
@@ -229,7 +232,7 @@ if ((usuario !="") && (usuario != null)) {
                                 valorIva()
                                 
                                 //Informo el valor con IVA
-                                alert(`El precio con IVA incluido es ${precioIva}`)
+                                alert(`El precio con IVA incluido es $ ${precioIva}`)
 
                                 //Consulto cuántas unidades quiere
                                 let cantidad = parseInt(prompt(`¿Cuántas unidades querés de ${productoElegido}?`))
@@ -250,7 +253,7 @@ if ((usuario !="") && (usuario != null)) {
                                         nroUnidades()
                                         
                                         //Informo precio total
-                                        alert(`El precio total por ${cantidad} unidades es ${precioUnidades}`)
+                                        alert(`El precio total por ${cantidad} unidades es $ ${precioUnidades}`)
 
                                             //Consulto si quiere avanzar con la compra
 
@@ -261,14 +264,16 @@ if ((usuario !="") && (usuario != null)) {
 
                                                 // Consulto forma de pago
 
-                                                formaPago = prompt(`¡Excelente ${usuario}. Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
+                                                formaPago = prompt(`¡Excelente ${usuario}! 
+                                                Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
 
                                                 switch (formaPago.toUpperCase()) {
 
 
                                                     case "EFECTIVO":
                                                     
-                                                    alert(`¡Excelente ${usuario}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`¡Excelente ${usuario}! 
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -279,7 +284,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioUnidades, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioUnidades, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -330,7 +335,8 @@ if ((usuario !="") && (usuario != null)) {
                                                     //Invoco la función
                                                     costoMP()
 
-                                                    alert(`El valor final con el valor de Mercado Pago incluido es: ${precioMP}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`El valor final con el valor de Mercado Pago incluido es: $ ${precioMP}. 
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -341,7 +347,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioMP, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioMP, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -405,7 +411,7 @@ if ((usuario !="") && (usuario != null)) {
                                 alert("Nos quedan " + planta3.stock + " unidades . Podés avanzar con la compra")
 
                                 //Informo el precio sin iva
-                                alert(`El precio sin IVA es ${planta3.valorBruto}`)
+                                alert(`El precio sin IVA es $ ${planta3.valorBruto}`)
                                 
                                 //Creo función para calcular valor IVA
                                 
@@ -419,7 +425,7 @@ if ((usuario !="") && (usuario != null)) {
                                 valorIva()
                                 
                                 //Informo el valor con IVA
-                                alert(`El precio con IVA incluido es ${precioIva}`)
+                                alert(`El precio con IVA incluido es $ ${precioIva}`)
 
                                 //Consulto cuántas unidades quiere
                                 let cantidad = parseInt(prompt(`¿Cuántas unidades querés de ${productoElegido}?`))
@@ -440,7 +446,7 @@ if ((usuario !="") && (usuario != null)) {
                                         nroUnidades()
                                         
                                         //Informo precio total
-                                        alert(`El precio total por ${cantidad} unidades es ${precioUnidades}`)
+                                        alert(`El precio total por ${cantidad} unidades es $ ${precioUnidades}`)
 
                                             //Consulto si quiere avanzar con la compra
 
@@ -451,14 +457,16 @@ if ((usuario !="") && (usuario != null)) {
 
                                                 // Consulto forma de pago
 
-                                                formaPago = prompt(`¡Excelente ${usuario}. Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
+                                                formaPago = prompt(`¡Excelente ${usuario}! 
+                                                Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
 
                                                 switch (formaPago.toUpperCase()) {
 
 
                                                     case "EFECTIVO":
                                                     
-                                                    alert(`¡Excelente ${usuario}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`¡Excelente ${usuario}! 
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -469,7 +477,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioUnidades, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioUnidades, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -520,7 +528,8 @@ if ((usuario !="") && (usuario != null)) {
                                                     //Invoco la función
                                                     costoMP()
 
-                                                    alert(`El valor final con el valor de Mercado Pago incluido es: ${precioMP}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`El valor final con el valor de Mercado Pago incluido es: $ ${precioMP}. 
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -531,7 +540,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioMP, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioMP, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -595,7 +604,7 @@ if ((usuario !="") && (usuario != null)) {
                                 alert("Nos quedan " + planta4.stock + " unidades . Podés avanzar con la compra")
 
                                 //Informo el precio sin iva
-                                alert(`El precio sin IVA es ${planta4.valorBruto}`)
+                                alert(`El precio sin IVA es $ ${planta4.valorBruto}`)
                                 
                                 //Creo función para calcular valor IVA
                                 
@@ -609,7 +618,7 @@ if ((usuario !="") && (usuario != null)) {
                                 valorIva()
                                 
                                 //Informo el valor con IVA
-                                alert(`El precio con IVA incluido es ${precioIva}`)
+                                alert(`El precio con IVA incluido es $ ${precioIva}`)
 
                                 //Consulto cuántas unidades quiere
                                 let cantidad = parseInt(prompt(`¿Cuántas unidades querés de ${productoElegido}?`))
@@ -630,7 +639,7 @@ if ((usuario !="") && (usuario != null)) {
                                         nroUnidades()
                                         
                                         //Informo precio total
-                                        alert(`El precio total por ${cantidad} unidades es ${precioUnidades}`)
+                                        alert(`El precio total por ${cantidad} unidades es $ ${precioUnidades}`)
 
                                             //Consulto si quiere avanzar con la compra
 
@@ -641,7 +650,8 @@ if ((usuario !="") && (usuario != null)) {
 
                                                 // Consulto forma de pago
 
-                                                formaPago = prompt(`¡Excelente ${usuario}. Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
+                                                formaPago = prompt(`¡Excelente ${usuario}! 
+                                                Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
 
                                                 switch (formaPago.toUpperCase()) {
 
@@ -659,7 +669,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioUnidades, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioUnidades, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -710,7 +720,8 @@ if ((usuario !="") && (usuario != null)) {
                                                     //Invoco la función
                                                     costoMP()
 
-                                                    alert(`El valor final con el valor de Mercado Pago incluido es: ${precioMP}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`El valor final con el valor de Mercado Pago incluido es: $ ${precioMP}. 
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -721,7 +732,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioMP, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioMP, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -782,10 +793,10 @@ if ((usuario !="") && (usuario != null)) {
                         case planta5.nombre:
                 
                             if (planta5.stock >= 1) {
-                                alert("Nos quedan " + planta5.stock + " unidades . Podés avanzar con la compra")
+                                alert("Nos quedan " + planta5.stock + " unidades . Podés avanzar con la compra.")
 
                                 //Informo el precio sin iva
-                                alert(`El precio sin IVA es ${planta5.valorBruto}`)
+                                alert(`El precio sin IVA es $ ${planta5.valorBruto}`)
                                 
                                 //Creo función para calcular valor IVA
                                 
@@ -799,7 +810,7 @@ if ((usuario !="") && (usuario != null)) {
                                 valorIva()
                                 
                                 //Informo el valor con IVA
-                                alert(`El precio con IVA incluido es ${precioIva}`)
+                                alert(`El precio con IVA incluido es $ ${precioIva}`)
 
                                 //Consulto cuántas unidades quiere
                                 let cantidad = parseInt(prompt(`¿Cuántas unidades querés de ${productoElegido}?`))
@@ -820,7 +831,7 @@ if ((usuario !="") && (usuario != null)) {
                                         nroUnidades()
                                         
                                         //Informo precio total
-                                        alert(`El precio total por ${cantidad} unidades es ${precioUnidades}`)
+                                        alert(`El precio total por ${cantidad} unidades es $ ${precioUnidades}`)
 
                                             //Consulto si quiere avanzar con la compra
 
@@ -831,14 +842,16 @@ if ((usuario !="") && (usuario != null)) {
 
                                                 // Consulto forma de pago
 
-                                                formaPago = prompt(`¡Excelente ${usuario}. Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
+                                                formaPago = prompt(`¡Excelente ${usuario}! 
+                                                Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
 
                                                 switch (formaPago.toUpperCase()) {
 
 
                                                     case "EFECTIVO":
                                                     
-                                                    alert(`¡Excelente ${usuario}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`¡Excelente ${usuario}! 
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -849,7 +862,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioUnidades, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioUnidades, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -900,7 +913,8 @@ if ((usuario !="") && (usuario != null)) {
                                                     //Invoco la función
                                                     costoMP()
 
-                                                    alert(`El valor final con el valor de Mercado Pago incluido es: ${precioMP}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`El valor final con el valor de Mercado Pago incluido es: $ ${precioMP}. 
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -911,7 +925,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioMP, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioMP, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -975,7 +989,7 @@ if ((usuario !="") && (usuario != null)) {
                                 alert("Nos quedan " + planta6.stock + " unidades . Podés avanzar con la compra")
 
                                 //Informo el precio sin iva
-                                alert(`El precio sin IVA es ${planta6.valorBruto}`)
+                                alert(`El precio sin IVA es $ ${planta6.valorBruto}`)
                                 
                                 //Creo función para calcular valor IVA
                                 
@@ -989,7 +1003,7 @@ if ((usuario !="") && (usuario != null)) {
                                 valorIva()
                                 
                                 //Informo el valor con IVA
-                                alert(`El precio con IVA incluido es ${precioIva}`)
+                                alert(`El precio con IVA incluido es $ ${precioIva}`)
 
                                 //Consulto cuántas unidades quiere
                                 let cantidad = parseInt(prompt(`¿Cuántas unidades querés de ${productoElegido}?`))
@@ -1010,7 +1024,7 @@ if ((usuario !="") && (usuario != null)) {
                                         nroUnidades()
                                         
                                         //Informo precio total
-                                        alert(`El precio total por ${cantidad} unidades es ${precioUnidades}`)
+                                        alert(`El precio total por ${cantidad} unidades es $ ${precioUnidades}`)
 
                                             //Consulto si quiere avanzar con la compra
 
@@ -1021,14 +1035,16 @@ if ((usuario !="") && (usuario != null)) {
 
                                                 // Consulto forma de pago
 
-                                                formaPago = prompt(`¡Excelente ${usuario}. Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
+                                                formaPago = prompt(`¡Excelente ${usuario}! 
+                                                Nuestras formas de pago son: Efectivo (sin interés) o Mercado Pago (con interés del 35%) ¿Cuál prefieres?`)
 
                                                 switch (formaPago.toUpperCase()) {
 
 
                                                     case "EFECTIVO":
                                                     
-                                                    alert(`¡Excelente ${usuario}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`¡Excelente ${usuario}! 
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -1039,7 +1055,7 @@ if ((usuario !="") && (usuario != null)) {
                                                         // Creo la función para sumar envío a domicilio
                                                         const precioFinal = (a,b) => a + b
                                                         
-                                                        alert(`El precio final con envío a domicilio incluido es ${precioFinal(precioUnidades, valorEnvio)}`)
+                                                        alert(`El precio final con envío a domicilio incluido es $ ${precioFinal(precioUnidades, valorEnvio)}`)
 
                                                         //Consultamos dirección a al cual hacer el envío
 
@@ -1090,7 +1106,8 @@ if ((usuario !="") && (usuario != null)) {
                                                     //Invoco la función
                                                     costoMP()
 
-                                                    alert(`El valor final con el valor de Mercado Pago incluido es: ${precioMP}. Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
+                                                    alert(`El valor final con el valor de Mercado Pago incluido es: $ ${precioMP}. 
+                                                    Ofrecemos un servicio de envío a domicilio. Se realiza 24 hs habiles posteriores a la compra y su valor es $ ${valorEnvio}`)
 
                                                     // Consulto si quiere que lo enviemos a domicilio
                                                     
@@ -1162,29 +1179,15 @@ if ((usuario !="") && (usuario != null)) {
                         default:
                             alert("Se produjo error")
                             break;
-
                     }
-                  
                         
                 } else {
                     alert ("no contamos con ese producto")
                 }
 
-                    
-
-
-
-
-
-
-
-
-
-
         } else {
             alert("Tranqui podés seguir mirando")
         } 
-
 
 } else {
     alert("Si no ingresás el nombre, no podrás comprar en esta web. Actualizá la página si querés volver a intentarlo.")
@@ -1192,28 +1195,4 @@ if ((usuario !="") && (usuario != null)) {
 
         
 
-/*         if (comprar == true) {
-            alert("qué querés comprar")
 
-            
-
-        } else {
-            alert("Muchas gracias vuelva prontos")
-        }
-} else {
-
-} */
-
-/* 
-let productoElegido = prompt("Ingresá el nombre del producto que querés comprar") */
-
-
-/* alert( productoElegido.toUpperCase() ) */
-
-/* if ( productoElegido.toUpperCase() == planta1.nombre ) {
-    alert( "hola" )
-} else {
-    alert ("chau")
-}
-        
- */
