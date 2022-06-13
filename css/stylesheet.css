@@ -23,34 +23,19 @@ font-family: 'Roboto', sans-serif;
 
 /* header */
 
-.div__img--logo {
-    margin: 20px 0px;    
-    width: 70%;
+.nav__img--logo {
+    height: 50px;
+
 }
-
-@media only screen and (min-width: 756px) and (max-width: 991px) {
-    .div__img--logo {
-    margin: 20px 0px;    
-    width: 30%;
-    }
-}
-
-@media only screen and (min-width: 991.1px) {
-    .div__img--logo {
-    margin: 40px 0px;    
-    width: 20%;
-    }
-}
-
-
 
 /* Body */
 
 body {    
     background-color: #EDF2F4;
+    width: 80%;
 }
 
-.body__div--general {
+/* .body__div--general {
     display: grid;
     justify-content: center;
     grid-template-columns: 45% 45%;
@@ -84,7 +69,7 @@ body {
     "titulo titulo titulo titulo titulo titulo"
     "p1 p2 p3 p4 p5 p6";
     }
-}
+} */
 
 h1 {
     grid-area: titulo;    
@@ -95,8 +80,8 @@ h1 {
 
 @media only screen and (min-width: 756px) and (max-width: 991px) {
     h1 {
-        font-size: 20px; 
-        text-align: center;        
+        font-size: 20px;
+              
     }
 }
 
@@ -106,7 +91,72 @@ h1 {
     }
 }
 
-.div--prod1 {
+.div__img--logo {
+    margin: 20px 0px;    
+    width: 70%;
+}
+
+@media only screen and (min-width: 756px) and (max-width: 991px) {
+    .div__img--logo {
+    margin: 20px 0px;    
+    width: 30%;
+    }
+}
+
+@media only screen and (min-width: 991.1px) {
+    .div__img--logo {
+    margin: 40px 0px;    
+    width: 20%;
+    }
+}
+
+.div__img--producto {
+    height: 250px;
+    object-fit:cover;
+    object-position:top;
+}
+
+.div__h5--prod {
+    color: #D90429;
+    font-weight: 400;
+}
+
+.div__p--prod {
+    font-size: 14px; 
+}
+
+.div__contenedorCompra {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    "cantidad carrito";
+    column-gap: 10px;
+}
+
+.div__select--cantidad {
+    font-size: small;
+    grid-area: cantidad;
+    width: 100%;
+}
+
+.div__btnCarrito {
+    grid-area: carrito;
+    width: 100%;
+    
+}
+
+/* Inicio carrtio */
+
+.div__col--carrito {
+    background-color: #8D99AE;
+    display: none;
+}
+
+
+
+/* .div--prod1 {
     grid-area: p1;    
     transition: 1s;
 }
@@ -172,5 +222,24 @@ h1 {
 .div__img--prod:hover {
     transform: scale(1.02);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+} */
+
+/* Footer */
+
+footer {
+    background-color: #EDF2F4;
+    padding-top: 20px;
+    padding-bottom: 20px;
+} 
+
+.div__logo--footer {
+    height: 70px;
+    padding: 10px 0px;
 }
+
+.footer__div--txt {
+    font-size: 10px;
+    padding: 10px 0;
+}
+
 
