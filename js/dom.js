@@ -25,6 +25,7 @@ function mostrarCards() {
 
         btnCarrito.addEventListener("click", ()=> {
             agregarCarrito(el.id)
+            
         })
 
 
@@ -44,7 +45,8 @@ function agregarCarrito(id) {
 function mostrarCarrito(almacenarProd) {
     let contenedorCarrito = document.createElement("div")
     contenedorCarrito.className = "div__contenedorCarrito"
-    contenedorCarrito.innerHTML = `<div class="div_carrito"> ${almacenarProd.nombre} | $ ${almacenarProd.valorNeto} | ${almacenarProd.medida} | <button id="borrar${almacenarProd.id}" type="button" class="btn" >
+    almacenarProd.envioDom = confirm("¿Enviamos el producto a tu domicilio?")
+    contenedorCarrito.innerHTML = `<div class="div_carrito"> ${almacenarProd.nombre} | $ ${almacenarProd.valorNeto} | ${almacenarProd.medida}  | Envío: ${almacenarProd.envioDom} | <button id="borrar${almacenarProd.id}" type="button" class="btn" >
                                     <i class="fa-solid fa-trash"></i></button> </div>`
     listadoCarrito.appendChild(contenedorCarrito)
 
@@ -74,9 +76,51 @@ function pagar() {
 
 
 }
-
 pagar()
 
-function formulario() {
-    
+
+
+/* Eventos del Formulario */
+
+submit.addEventListener("mouseover", ()=> {
+    submit.className = "btn btn-primary"
+})
+
+submit.addEventListener("mouseout", ()=> {
+    submit.className = "btn btn-danger"
+})
+
+submit.addEventListener("submit", validarFormulario)
+
+function validarFormulario(e){
+    e.preventDefault()
+    console.log("Detención de evento submit")
 }
+
+inputNombre.addEventListener("input", ()=> {
+    console.clear()
+    console.log(inputNombre.value)
+
+})
+
+inputEmail.addEventListener("input", ()=> {
+    console.clear()
+    console.log(inputEmail.value)
+
+})
+
+inputTelefono.addEventListener("input", ()=> {
+    console.clear()
+    console.log(inputTelefono.value)
+
+})
+
+let pagoElegido = inputFormaPago.addEventListener("change", ()=> {
+    console.log(inputFormaPago.value)
+})
+
+
+let cantPago = inputCantPago.addEventListener("keydown", (e)=> {
+    console.log(e.key)
+})
+

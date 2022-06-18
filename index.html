@@ -96,7 +96,7 @@
 
             </div>
 
-            
+
 
             <!-- Inicio form -->
 
@@ -124,21 +124,18 @@
                     <div class="mb-3">
                         <div class="mb-3">
                             <label for="text" class="form-label">Forma de pago</label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">Transferencia bancaria</label>
-                              </div>
-                              <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">Mercado Pago</label>
-                              </div>
+                            <select class="form-select" id="inputFormaPago">
+                                <option selected>Seleccionar</option>
+                                <option value="1">Mercado Pago</option>
+                                <option value="2">Transferencia bancaria</option>                                
+                            </select>
                                             
                         </div>                   
                     </div>     
                     <div class="mb-3">
                         <div class="mb-3">
                             <label for="text" class="form-label">Cantidad de pagos</label>
-                            <input type="text" class="form-control" id="inputCantPagos">                        
+                            <input type="text" class="form-control" id="inputCantPago">                        
                         </div>                   
                     </div>                    
                     <button type="submit" id="submit" title ="Enviar datos, gato" class="btn btn-danger">Submit</button>

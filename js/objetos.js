@@ -9,6 +9,7 @@ class Planta {
         this.precioUnidades = parseInt(precioUnidades);
         this.imgs = imgs
         this.descripcion = descripcion
+        this.envioDomicilio = false
     }    
     
     productoVendido() {
