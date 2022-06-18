@@ -1,18 +1,16 @@
 class Planta {
-    constructor(nombre, valorBruto, alto, ancho, peso, stock, precioUnidades) {
+    constructor(id, nombre, valorNeto, medida, stock, precioUnidades, imgs, descripcion) {
+        this.id = parseInt(id)
         this.nombre = nombre.toUpperCase();
-        this.valorBruto = parseFloat(valorBruto);
-        this.alto = parseFloat(alto);
-        this.ancho = parseFloat(ancho);
-        this.peso = parseFloat(peso);
+        this.valorNeto = parseFloat(valorNeto)
+        this.medida = medida;
         this.stock = parseInt(stock);
         this.vendido = false;       
         this.precioUnidades = parseInt(precioUnidades);
+        this.imgs = imgs
+        this.descripcion = descripcion
     }    
-
-    valorIva() {
-        this.valorBruto = parseInt(this.valorBruto * 1.21)
-    }   
+    
     productoVendido() {
         this.vendido = true;
     }
