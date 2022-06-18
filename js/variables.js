@@ -1,5 +1,6 @@
 let porcentajeMP = 1.35
 let productoUnidades = 0
+let envioDom = ""
 
 const listadoPlantas = document.getElementById("listadoPlantas")
 let lateralCarrito = document.getElementById("lateralCarrito")
@@ -8,6 +9,7 @@ const listadoCarrito = document.getElementById("listadoCarrito")
 let valorTotal = document.getElementById("valorTotal")
 let divComprar = document.getElementById("divComprar")
 let formu = document.getElementById("formu")
+let envioDomicilio  = document.getElementById("envioDomicilio")
 
 const inputNombre = document.querySelector("#inputNombre")
 const inputEmail = document.querySelector("#inputEmail")

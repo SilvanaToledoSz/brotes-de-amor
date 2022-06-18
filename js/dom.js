@@ -45,8 +45,7 @@ function agregarCarrito(id) {
 function mostrarCarrito(almacenarProd) {
     let contenedorCarrito = document.createElement("div")
     contenedorCarrito.className = "div__contenedorCarrito"
-    almacenarProd.envioDom = confirm("¿Enviamos el producto a tu domicilio?")
-    contenedorCarrito.innerHTML = `<div class="div_carrito"> ${almacenarProd.nombre} | $ ${almacenarProd.valorNeto} | ${almacenarProd.medida}  | Envío: ${almacenarProd.envioDom} | <button id="borrar${almacenarProd.id}" type="button" class="btn" >
+    contenedorCarrito.innerHTML = `<div class="div_carrito"> ${almacenarProd.nombre} | $ ${almacenarProd.valorNeto} | ${almacenarProd.medida}  |  <button id="borrar${almacenarProd.id}" type="button" class="btn" >
                                     <i class="fa-solid fa-trash"></i></button> </div>`
     listadoCarrito.appendChild(contenedorCarrito)
 
@@ -72,7 +71,8 @@ function pagar() {
 
     btnComprar.addEventListener("click", ()=> {
         formu.className = "col-12 div__form mt-5"
-    })
+    })  
+    
 
 
 }
