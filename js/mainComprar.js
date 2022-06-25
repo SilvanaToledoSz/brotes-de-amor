@@ -76,7 +76,7 @@ submit.addEventListener("click", (e)=> {
     e.preventDefault()
     console.log("Detención de evento submit")
 
-    if ((inputNombre.value =="") || (inputEmail.value =="") || (inputTelefono.value =="") || (inputFormaPago.value =="") || (inputCantPago.value =="") )  {
+    if ((inputNombre.value =="") || (inputEmail.value =="") || (inputTelefono.value =="") || (inputFormaPago.value =="") )  {
         Swal.fire({
             title: 'Error',
             text: 'Te falta completar algunos campos',
@@ -107,7 +107,4 @@ let pagoElegido = inputFormaPago.addEventListener("change", ()=> {
     console.log(inputFormaPago.value)
 })
 
-let cantPago = inputCantPago.addEventListener("keydown", (e)=> {
-    console.log(e.key)
-})
 
