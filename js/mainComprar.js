@@ -30,8 +30,7 @@ bajarCarrito()
 
 
 //Suma los objetos de array y muestra valor total
-function sumarProd(prod) {
-    carritoHeader.innerHTML = prod.length
+function sumarProd(prod) {    
     contadorProd.innerText = prod.length
     valorTotal.innerText = prod.reduce((acumulador,pl)=> acumulador + pl.valorNeto , 0)  
 }
