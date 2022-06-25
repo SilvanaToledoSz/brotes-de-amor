@@ -8,6 +8,8 @@ let contadorProd = document.getElementById("contadorProd");
 const listadoCarrito = document.getElementById("listadoCarrito")
 let valorTotal = document.getElementById("valorTotal")
 let divComprar = document.getElementById("divComprar")
+let divVolver = document.getElementById("divVolver")
+let carritoHeader = document.getElementById("carritoHeader")
 let formu = document.getElementById("formu")
 let envioDomicilio  = document.getElementById("envioDomicilio")
 
@@ -17,5 +19,5 @@ const inputTelefono = document.querySelector("#inputTelefono")
 let inputFormaPago = document.querySelector("#inputFormaPago")
 let inputCantPago = document.querySelector("#inputCantPago")
 const submit = document.querySelector("#submit")
-
 const inputs = document.querySelectorAll("input")
+

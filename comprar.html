@@ -8,12 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/stylesheet.css">
-    <!-- Javascript -->
-    <!-- <script defer src="js/objetos.js"></script> -->
+    <!-- Javascript -->    
     <script defer src="js/variablesIndex.js"></script>
     <script defer src="js/arraysIndex.js"></script>    
-    <script defer src="js/mainIndex.js"></script>
+    <script defer src="js/mainComprar.js"></script>
     
+   
+
     <!-- Fonts Awesome -->
     <script src="https://kit.fontawesome.com/3981ea7616.js" crossorigin="anonymous"></script>    
     <title>Brotes de amor</title>
@@ -27,10 +28,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                    <i class="fa-solid fa-cart-shopping text-dark"></i>                
-                    <span id="carritoHeader" type="button" class="btn"></span>
-                    <button id="btnComprarHome" type="button" class="btn btn-danger btn-sm div__btnComprar" style="background-color: #D90429;">Comprar</button>   
-
+                <i class="fa-solid fa-cart-shopping text-dark"></i>                
+                <span id="carritoHeader" type="button" class="btn"></span>
                 <!-- <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -59,22 +58,106 @@
                 <img src="imgs/logo.png" class="div__img--logo" alt="Logo Brotes de Amor">
             </div>
 
-            <h1 class="text-center">Catálogo de productos</h1>
+            <h1 class="text-center">¡Ya casi es tuyo!</h1>
         </div>
 
-        <div class="col-7">    
+        <!-- Inicio carrito -->
 
-            <div class="row row-cols-1 row-cols-md-3 g-4" id="listadoPlantas">
-
-                <!-- Acá se insertan las tarjetas de productos desde el js -->
+        <div class="col-5 mt-5" id="lateralCarrito">            
+            <div class="col12">
+                <p>Productos en carrito <span id="contadorProd">0</span></p>
                 
             </div>
-        
+            <div class="col12">
+            
+                <div id="listadoCarrito">
+                
+                </div>
+                
+            </div>
+
+            <div class="col12">
+                <p>Total a pagar: $ 
+                    <span id="valorTotal">
+                    <!-- Muestra Valor Total -->
+                    </span>
+                </p>
+            </div>
+
+            <div class="col5" id="divVolver">
+                <!-- Bton volver -->
+
+            </div>
+
+            <div class="col5" id="divComprar">
+                <!-- Bton comprar -->
+
+            </div>
+
+           
+            
+
+           
+        </div>
+
+
+        <!-- Fin carrito -->
+
+        <!-- Inicio form -->
+
+        <div id="formu" class="col-5 formNO">
+
+            <form>
+                <div class="mb-3">
+                    <h4>Completa tus datos para finalizar la compra:</h4>                        
+                </div>                    
+                <div class="mb-3">
+                    <label for="text" class="form-label">Nombre y apellido</label>
+                    <input type="text" 
+                    class="form-control" id="inputNombre">                        
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail"  aria-describedby="emailHelp">
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="text" class="form-label">Celular</label>
+                    <input type="tel" 
+                    class="form-control" id="inputTelefono" >                        
+                </div>
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Forma de pago</label>
+                        <select class="form-select" id="inputFormaPago">
+                            <option selected>Seleccionar</option>
+                            <option value="1">Mercado Pago</option>
+                            <option value="2">Transferencia bancaria</option>                                
+                        </select>
+                                        
+                    </div>                   
+                </div>     
+                <div class="mb-3">
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Cantidad de pagos</label>
+                        <input type="text" class="form-control" id="inputCantPago">                        
+                    </div>                   
+                </div>                    
+                <button type="submit" id="submit" title ="Enviar datos, gato" class="btn btn-danger">Submit</button>
+            </form>
+
+
+
 
         </div>
-        <!-- Fin Catálogo -->
 
-       
+
+        <!-- Fin form -->
+     
+
+        
+
+           
 
 
 
