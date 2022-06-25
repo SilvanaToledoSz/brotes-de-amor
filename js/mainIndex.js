@@ -1,4 +1,4 @@
-// Muestra productos en el html
+// Muestra productos en el HTML
 
 function mostrarCards() {
     plantas.forEach (el => {
@@ -18,12 +18,16 @@ function mostrarCards() {
                         </div>`
         listadoPlantas.appendChild(div)
 
+        //Vincula el botón de carrito con la carga de productos al array:
+
         let btnCarrito = document.getElementById(`boton${el.id}`)      
 
         btnCarrito.addEventListener("click", ()=> {
             agregarCarrito(el.id)
             
         })
+
+        //Vincula el botón de comprar con la página donde se verá el resumen de carrito:
 
         let btnComprarHome = document.getElementById("btnComprarHome")      
 
@@ -32,12 +36,12 @@ function mostrarCards() {
             
         }) 
 
-        
-
     })
 }
 
 mostrarCards()
+
+//Función que carga el array Carrito. También sube la info a LocalStorage:
 
 function agregarCarrito(id) {    
     let almacenarProd = plantas.find(pl => pl.id === id)        
@@ -47,12 +51,4 @@ function agregarCarrito(id) {
 }
 
 
-
-
-
-/* function recuperoLS() {
-    carrito = JSON.parse(localStorage.getItem("subirCarrito"))
-}
-recuperoLS()
- */
 

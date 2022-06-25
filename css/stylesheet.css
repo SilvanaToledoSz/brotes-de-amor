@@ -28,12 +28,20 @@ font-family: 'Roboto', sans-serif;
 
 }
 
+.header-compra {
+    display: flex;
+    flex-direction: row;
+
+}
+
 /* Body */
 
 body {    
     background-color: #EDF2F4;
     width: 80%;
 }
+
+/* Index */
 
 
 
@@ -76,6 +84,14 @@ h1 {
     }
 }
 
+.div__btnComprar {
+    width: 80%;
+    font-size: 12px;
+    
+}
+
+/* Class card en JS - mainIndex */
+
 .div__img--producto {
     height: 250px;
     object-fit:cover;
@@ -85,6 +101,7 @@ h1 {
 .div__h5--prod {
     color: #D90429;
     font-weight: 400;
+    text-transform: capitalize;
 }
 
 .div__p--prod {
@@ -101,44 +118,37 @@ h1 {
     column-gap: 10px;
 }
 
-.div__select--cantidad {
-    font-size: small;
-    grid-area: cantidad;
-    width: 100%;
-}
-
 .div__btnCarrito {
     grid-area: carrito;
     width: 100%;
     
 }
 
-.div__btnComprar {
-    width: 10%;
+
+
+/* mainComprar JS */
+
+.tabla_carrito {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.td_carrito {
+    width: 30%;
+    font-size: 15px;
+    text-transform: uppercase;
     
 }
 
-/* Lateral carrito */
-
-.div__col--carritoNO {
-    display: none;
-}
-
-.div__col--carrito {
-    background-color: #8D99AE;
-    display: block;
-    transition: 1s;
-}
-
-.div_carrito {
+.btnVolver {    
     width: 100%;
 }
 
-/* Formulario */
-
-.formNO {
-    display: none;
+.btnComprar {    
+    width: 100%;    
 }
+
+/* mainComprar JS - Formulario */
 
 .div__form {
     display: block;
@@ -147,6 +157,43 @@ h1 {
     align-items: center;
 }
 
+
+/* Comprar HTML */
+
+.recuento {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    
+}
+
+.formNO {
+    display: none;
+}
+
+.fuente-form {
+    font-size: 16px;
+}
+
+.fuente-input {
+    font-size: 12px;
+}
+
+/* Gracias HTML */
+
+.contBtnVolver {
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+}
+
+/* mainGracias JS */
+
+.btnGracias {
+    width: 20%;
+    
+}
 
 /* Footer */
 

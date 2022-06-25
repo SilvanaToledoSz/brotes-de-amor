@@ -11,6 +11,7 @@ let plantas = [
 
 let carrito = []
 
+let carritoLS = []
 
 
 
