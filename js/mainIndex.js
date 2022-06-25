@@ -50,9 +50,9 @@ function agregarCarrito(id) {
 
 
 
-function recuperoLS() {
+/* function recuperoLS() {
     carrito = JSON.parse(localStorage.getItem("subirCarrito"))
 }
 recuperoLS()
-
+ */
 

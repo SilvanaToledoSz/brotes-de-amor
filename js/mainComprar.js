@@ -5,8 +5,7 @@ function bajarCarrito() {
     let carritoLS = JSON.parse(localStorage.getItem("subirCarrito"))
         for (item of carritoLS) {
             filas += `
-                    <div>${item.nombre} | ${item.valorNeto} | ${item.medida} |  <button id="borrar${item.id}" type="button" class="btn" >
-                    <i class="fa-solid fa-trash"></i></button>
+                    <div>${item.nombre} | ${item.valorNeto} | ${item.medida} 
                     </div>`
         }
     contenedorCarrito.innerHTML = filas
@@ -17,14 +16,14 @@ function bajarCarrito() {
     contadorProd.innerText = carritoLS.length
     valorTotal.innerText = carritoLS.reduce((acumulador,pl)=> acumulador + pl.valorNeto , 0)  
 
-    let borrarProd = document.getElementById(`borrar${item.id}`)
+    /* let borrarProd = document.getElementById(`borrar${item.id}`)
     borrarProd.addEventListener("click", ()=> {
         borrarProd.parentElement.remove()
         carritoLS = carritoLS.filter(prod => prod.id !== item.id)
         contadorProd.innerText = carritoLS.length
         valorTotal.innerText = carritoLS.reduce((acumulador,pl)=> acumulador + pl.valorNeto , 0)
         
-    })
+    }) */
 
    
         
