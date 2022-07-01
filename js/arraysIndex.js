@@ -1,3 +1,8 @@
+// Implementación de array de elementos:
+
+let usuarios = []
+
+
 // Implementación de array de objetos
 
 let plantas = [

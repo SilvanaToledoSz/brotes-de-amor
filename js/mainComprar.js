@@ -9,10 +9,11 @@ function bajarCarrito() {
     let carritoLS = JSON.parse(localStorage.getItem("subirCarrito"))
         for (item of carritoLS) {
             filas += `
-                    <tr>
+                    <tr id="tr_carrito${item.id}">
                         <td class="td_carrito">${item.nombre}</td>
                         <td class="td_carrito">$ ${item.valorNeto}</td>
                         <td class="td_carrito">${item.medida}</td>
+                        <td class="td_carrito"><button id="borrar${item.id}" type="button" class="btn" ><i class="fa-solid fa-trash"></i></button></td>
                     </tr>
                     <tr>
                         <td colspan=3>
@@ -22,11 +23,40 @@ function bajarCarrito() {
         }
         contenedorCarrito.innerHTML = filas
         listadoCarrito.appendChild(contenedorCarrito)
-    
+
     sumarProd(carritoLS)
+
+    borrar(carritoLS)
+
+    // let borrarProd = document.getElementById(`borrar${item.id}`)
+    // borrarProd.addEventListener("click", ()=> {
+    //     let carritoBorrar = document.getElementById(`tr_carrito${item.id}`)
+    //     carritoBorrar.className = "chauCarrito"
+    //     carritoLS = carritoLS.filter(prod => prod.id !== item.id)
+    
+    // sumarProd(carritoLS)
+    // })
 }
 
 bajarCarrito()
+
+function borrar(carritoLS) {    
+        for (elemento of carritoLS) {            
+            let borrarProd = document.getElementById(`borrar${elemento.id}`)
+            borrarProd.addEventListener("click", ()=> {
+                debugger
+                let carritoBorrar = document.getElementById(`tr_carrito${elemento.id}`)
+                carritoBorrar.className = "chauCarrito"
+                carritoLS = carritoLS.filter(prod => prod.id !== elemento.id)
+            
+            sumarProd(carritoLS)
+            })
+            
+        }
+
+}
+
+
 
 
 //Suma los objetos de array y muestra valor total

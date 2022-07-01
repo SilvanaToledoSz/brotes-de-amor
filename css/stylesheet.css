@@ -140,6 +140,10 @@ h1 {
     
 }
 
+.chauCarrito {
+    display: none;
+}
+
 .btnVolver {    
     width: 100%;
 }

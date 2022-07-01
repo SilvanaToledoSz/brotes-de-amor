@@ -1,3 +1,25 @@
+//Pide nombre del usuario:
+
+// function nombreUsuario() {
+    
+//     console.clear()
+//     let nombreUsuario = prompt("Cómo te llamás")
+//     usuarios.push(nombreUsuario)
+//     localStorage.setItem("subirUsuario", JSON.stringify(usuarios))
+//     console.table(usuarios)
+    
+//     for (let i = 0; i < usuarios.length; i++) {
+//         console.log(usuarios[i])
+//         /* alert(`hola ${usuario[i]}`) */
+//         usuario.innerHTML = `Hola ${usuarios[i]}`
+//     } 
+    
+// }
+
+// nombreUsuario()
+
+
+
 // Muestra productos en el HTML
 
 function mostrarCards() {

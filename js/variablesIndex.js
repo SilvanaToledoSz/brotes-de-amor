@@ -1,3 +1,5 @@
+let usuario = document.getElementById("usuario")
+
 const listadoPlantas = document.getElementById("listadoPlantas")
 let contadorProd = document.getElementById("contadorProd");
 const listadoCarrito = document.getElementById("listadoCarrito")
