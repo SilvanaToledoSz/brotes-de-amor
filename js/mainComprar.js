@@ -12,8 +12,7 @@ function bajarCarrito() {
                     <tr id="tr_carrito${item.id}">
                         <td class="td_carrito">${item.nombre}</td>
                         <td class="td_carrito">$ ${item.valorNeto}</td>
-                        <td class="td_carrito">${item.medida}</td>
-                        <td class="td_carrito"><button id="borrar${item.id}" type="button" class="btn" ><i class="fa-solid fa-trash"></i></button></td>
+                        <td class="td_carrito">${item.medida}</td>                        
                     </tr>
                     <tr>
                         <td colspan=3>
@@ -26,7 +25,7 @@ function bajarCarrito() {
 
     sumarProd(carritoLS)
 
-    borrar(carritoLS)
+    // borrar(carritoLS)
 
     // let borrarProd = document.getElementById(`borrar${item.id}`)
     // borrarProd.addEventListener("click", ()=> {
@@ -40,21 +39,21 @@ function bajarCarrito() {
 
 bajarCarrito()
 
-function borrar(carritoLS) {    
-        for (elemento of carritoLS) {            
-            let borrarProd = document.getElementById(`borrar${elemento.id}`)
-            borrarProd.addEventListener("click", ()=> {
-                debugger
-                let carritoBorrar = document.getElementById(`tr_carrito${elemento.id}`)
-                carritoBorrar.className = "chauCarrito"
-                carritoLS = carritoLS.filter(prod => prod.id !== elemento.id)
+// function borrar(carritoLS) {    
+//         for (elemento of carritoLS) {            
+//             let borrarProd = document.getElementById(`borrar${elemento.id}`)
+//             borrarProd.addEventListener("click", ()=> {
+//                 debugger
+//                 let carritoBorrar = document.getElementById(`tr_carrito${elemento.id}`)
+//                 carritoBorrar.className = "chauCarrito"
+//                 carritoLS = carritoLS.filter(prod => prod.id !== elemento.id)
             
-            sumarProd(carritoLS)
-            })
+//             sumarProd(carritoLS)
+//             })
             
-        }
+//         }
 
-}
+// }
 
 
 
@@ -101,11 +100,13 @@ submit.addEventListener("mouseout", ()=> {
     submit.className = "btn btn-danger"
 })
 
+//Aplicación de galería SweetAlert:
+
 submit.addEventListener("click", (e)=> {
     e.preventDefault()
     console.log("Detención de evento submit")
 
-    if ((inputNombre.value =="") || (inputEmail.value =="") || (inputTelefono.value =="") || (inputFormaPago.value =="") )  {
+    if ((inputNombre.value =="") || (inputEmail.value =="") || (inputTelefono.value =="") || (inputFormaPago.value !="1") && (inputFormaPago.value !="2") )  {
         Swal.fire({
             title: 'Error',
             text: 'Te falta completar algunos campos',

@@ -1,25 +1,3 @@
-//Pide nombre del usuario:
-
-// function nombreUsuario() {
-    
-//     console.clear()
-//     let nombreUsuario = prompt("Cómo te llamás")
-//     usuarios.push(nombreUsuario)
-//     localStorage.setItem("subirUsuario", JSON.stringify(usuarios))
-//     console.table(usuarios)
-    
-//     for (let i = 0; i < usuarios.length; i++) {
-//         console.log(usuarios[i])
-//         /* alert(`hola ${usuario[i]}`) */
-//         usuario.innerHTML = `Hola ${usuarios[i]}`
-//     } 
-    
-// }
-
-// nombreUsuario()
-
-
-
 // Muestra productos en el HTML
 
 function mostrarCards() {
@@ -46,22 +24,29 @@ function mostrarCards() {
 
         btnCarrito.addEventListener("click", ()=> {
             agregarCarrito(el.id)
+            notifCarrito(el.nombre)
             
         })
 
         //Vincula el botón de comprar con la página donde se verá el resumen de carrito:
 
-        let btnComprarHome = document.getElementById("btnComprarHome")      
-
-        btnComprarHome.addEventListener("click", ()=> {
-            location.href = "comprar.html"
-            
-        }) 
+        
 
     })
 }
 
 mostrarCards()
+
+function btnComprar() {
+    let btnComprarHome = document.getElementById("btnComprarHome")      
+
+        btnComprarHome.addEventListener("click", ()=> {
+            location.href = "comprar.html"
+            
+        }) 
+}
+
+btnComprar()
 
 //Función que carga el array Carrito. También sube la info a LocalStorage:
 
@@ -70,7 +55,30 @@ function agregarCarrito(id) {
     carrito.push(almacenarProd)
     localStorage.setItem("subirCarrito", JSON.stringify(carrito))   
     carritoHeader.innerHTML = carrito.length  
+
+    
+
 }
+
+//Incorporación de librería toastify:
+
+function notifCarrito(prod) {
+    Toastify({
+        text: `Agregaste ${prod}`,
+        duration: 1000,
+        gravity: 'bottom',
+        className: 'clase_toast',
+        style: {
+            background: "linear-gradient(to right, #D90429, #BA0323)",
+          }
+
+
+    }).showToast();
+
+}
+
+
+
 
 
 

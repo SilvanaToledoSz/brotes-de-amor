@@ -16,4 +16,7 @@ let inputFormaPago = document.querySelector("#inputFormaPago")
 const submit = document.querySelector("#submit")
 
 let graciasVolver = document.getElementById("graciasVolver")
+const DateTime = luxon.DateTime
+let fechaHoy = document.getElementById("fechaHoy")
+let fechaEntrega = document.getElementById("fechaEntrega")
 
