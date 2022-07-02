@@ -6,13 +6,14 @@ function bajarCarrito() {
     let contenedorCarrito = document.createElement("table")
     contenedorCarrito.className = "tabla_carrito"
     let filas = ""
-    let carritoLS = JSON.parse(localStorage.getItem("subirCarrito"))
+    let carritoLS = JSON.parse(localStorage.getItem("subirCarrito")) || ["Carrito vacío"]
         for (item of carritoLS) {
+            const {id, nombre, valorNeto, medida} = item 
             filas += `
-                    <tr id="tr_carrito${item.id}">
-                        <td class="td_carrito">${item.nombre}</td>
-                        <td class="td_carrito">$ ${item.valorNeto}</td>
-                        <td class="td_carrito">${item.medida}</td>                        
+                    <tr id="tr_carrito${id}">
+                        <td class="td_carrito">${nombre}</td>
+                        <td class="td_carrito">$ ${valorNeto}</td>
+                        <td class="td_carrito">${medida}</td>                        
                     </tr>
                     <tr>
                         <td colspan=3>
@@ -25,35 +26,10 @@ function bajarCarrito() {
 
     sumarProd(carritoLS)
 
-    // borrar(carritoLS)
 
-    // let borrarProd = document.getElementById(`borrar${item.id}`)
-    // borrarProd.addEventListener("click", ()=> {
-    //     let carritoBorrar = document.getElementById(`tr_carrito${item.id}`)
-    //     carritoBorrar.className = "chauCarrito"
-    //     carritoLS = carritoLS.filter(prod => prod.id !== item.id)
-    
-    // sumarProd(carritoLS)
-    // })
 }
 
 bajarCarrito()
-
-// function borrar(carritoLS) {    
-//         for (elemento of carritoLS) {            
-//             let borrarProd = document.getElementById(`borrar${elemento.id}`)
-//             borrarProd.addEventListener("click", ()=> {
-//                 debugger
-//                 let carritoBorrar = document.getElementById(`tr_carrito${elemento.id}`)
-//                 carritoBorrar.className = "chauCarrito"
-//                 carritoLS = carritoLS.filter(prod => prod.id !== elemento.id)
-            
-//             sumarProd(carritoLS)
-//             })
-            
-//         }
-
-// }
 
 
 
@@ -104,19 +80,29 @@ submit.addEventListener("mouseout", ()=> {
 
 submit.addEventListener("click", (e)=> {
     e.preventDefault()
-    console.log("Detención de evento submit")
+    console.log("Detención de evento submit")    
 
-    if ((inputNombre.value =="") || (inputEmail.value =="") || (inputTelefono.value =="") || (inputFormaPago.value !="1") && (inputFormaPago.value !="2") )  {
-        Swal.fire({
-            title: 'Error',
-            text: 'Te falta completar algunos campos',
-            icon: 'error',
-            confirmButtonText: 'Terminar de completar'
-        })  
-    } else {
-        location.href = "gracias.html" 
-    }
+    //Chequeo de campos completos:
+
+    let habilitarCompra = ((inputNombre.value =="") || (inputEmail.value =="") || (inputTelefono.value =="") || (inputFormaPago.value !="Mercado Pago") && (inputFormaPago.value !="Transferencia Bancaria")) ? true : false
+    habilitarCompra ? alertaFinal() : location.href = "gracias.html" 
+    debugger
+    datosCompra()
+    
+    
+
 })
+
+function alertaFinal(){
+    Swal.fire({
+        title: 'Error',
+        text: 'Te falta completar algunos campos',
+        icon: 'error',
+        confirmButtonText: 'Terminar de completar'
+    })  
+
+}
+
 
 inputNombre.addEventListener("input", ()=> {
     console.clear()
@@ -136,5 +122,19 @@ inputTelefono.addEventListener("input", ()=> {
 let pagoElegido = inputFormaPago.addEventListener("change", ()=> {
     console.log(inputFormaPago.value)
 })
+
+function datosCompra() {
+    cliente.push(inputNombre.value)
+    cliente.push(inputEmail.value)
+    cliente.push(inputTelefono.value)
+    cliente.push(inputFormaPago.value)
+    console.log(cliente)
+    localStorage.setItem("subirCliente", JSON.stringify(cliente))  
+    
+}
+
+
+
+
 
 

@@ -1,17 +1,17 @@
 // Muestra productos en el HTML
-
 function mostrarCards() {
     plantas.forEach (el => {
         let div = document.createElement("div")
         div.className = "col"
+        const {imgs, nombre, medida, valorNeto, id} = el
         div.innerHTML = `<div class="card">                    
-                            <img src="${el.imgs}" class="card-img-top div__img--producto">
+                            <img src="${imgs}" class="card-img-top div__img--producto">
                             <div class="card-body">
-                                <h5 class="div__h5--prod">${el.nombre}</h5>                                
-                                <p class="div__p--prod">Medida: ${el.medida}</p>
-                                <p class="div__p--prod">Precio: $${el.valorNeto}</p>
+                                <h5 class="div__h5--prod">${nombre}</h5>                                
+                                <p class="div__p--prod">Medida: ${medida}</p>
+                                <p class="div__p--prod">Precio: $${valorNeto}</p>
                                 <div class="div__contenedorCompra">
-                                    <button id="boton${el.id}" type="button" class="btn btn-danger btn-sm div__btnCarrito" style="background-color: #D90429;"><i class="fa-solid fa-cart-shopping text-light"></i></button>
+                                    <button id="boton${id}" type="button" class="btn btn-danger btn-sm div__btnCarrito" style="background-color: #D90429;"><i class="fa-solid fa-cart-shopping text-light"></i></button>
                                 </div> 
                                 
                             </div>
@@ -54,7 +54,7 @@ function agregarCarrito(id) {
     let almacenarProd = plantas.find(pl => pl.id === id)        
     carrito.push(almacenarProd)
     localStorage.setItem("subirCarrito", JSON.stringify(carrito))   
-    carritoHeader.innerHTML = carrito.length  
+    carritoHeader.innerHTML = carrito.length
 
     
 

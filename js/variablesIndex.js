@@ -1,3 +1,4 @@
+let user = ""
 let usuario = document.getElementById("usuario")
 
 const listadoPlantas = document.getElementById("listadoPlantas")
@@ -14,9 +15,11 @@ const inputEmail = document.querySelector("#inputEmail")
 const inputTelefono = document.querySelector("#inputTelefono")
 let inputFormaPago = document.querySelector("#inputFormaPago")
 const submit = document.querySelector("#submit")
+let clienteObj = {}
 
 let graciasVolver = document.getElementById("graciasVolver")
 const DateTime = luxon.DateTime
 let fechaHoy = document.getElementById("fechaHoy")
 let fechaEntrega = document.getElementById("fechaEntrega")
+let masDatos = document.getElementById("masDatos")
 

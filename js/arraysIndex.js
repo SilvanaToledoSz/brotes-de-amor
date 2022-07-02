@@ -1,8 +1,3 @@
-// Implementación de array de elementos:
-
-let usuarios = []
-
-
 // Implementación de array de objetos
 
 let plantas = [
@@ -14,10 +9,13 @@ let plantas = [
 {id: 6, nombre: "cactus espiralado", valorNeto: 250.0, medida: "M", stock: 7, vendido: false, precioUnidades: 0, imgs: 'https://silvanatoledosz.github.io/brotes-de-amor/imgs/producto6.jpg'},
 ]
 
+//Array de objetos
 let carrito = []
-
 let carritoLS = []
 
+//Array de elementos
+let cliente = []
+let clienteFinal = []
 
 
 

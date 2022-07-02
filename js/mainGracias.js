@@ -12,15 +12,38 @@ function gracias() {
 
 gracias()
 
+function mostrarCompra() {
+let clienteFinal = JSON.parse(localStorage.getItem("subirCliente"))
+let contenedorDatos = document.createElement("div")
+contenedorDatos.className = "datosCompra"
+let datos = clienteFinal.join("<br>")
+        contenedorDatos.innerHTML = datos
+        masDatos.appendChild(contenedorDatos)
+        console.log(clienteFinal)
+
+        clienteObj = {
+            ...clienteFinal
+        }
+        console.log(clienteObj[0])
+        console.log(clienteObj[1])
+        console.log(clienteObj[2])
+        console.log(clienteObj[3])
+
+    }
+
+mostrarCompra()
+
+
 
 
 //Aplicación de galería Luxon:
 
 function fecha(){
     const hoy = DateTime.now()
-    console.log( hoy.toString() )
-    fechaHoy.innerHTML = `Fecha de compra: ${hoy.toLocaleString(DateTime.DATE_SHORT)}` 
-    const suma = hoy.plus({ days: 2 })
-    fechaEntrega.innerHTML = `Fecha de entrega: ${suma.toLocaleString(DateTime.DATE_SHORT)}` 
+    console.log( hoy.toString() )    
+    fechaHoy.innerHTML = `<div>Fecha de compra: ${hoy.toLocaleString(DateTime.DATE_SHORT)}</div>`     
+    const suma = hoy.plus({ days: 2 })   
+    fechaEntrega.innerHTML = `<div>Fecha de entrega: ${suma.toLocaleString(DateTime.DATE_SHORT)}</div>`
+     
 }
 fecha()

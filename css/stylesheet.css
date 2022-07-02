@@ -193,6 +193,19 @@ h1 {
 
 /* Gracias HTML */
 
+.tit_datosCompra {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.datosCompra {
+    font-size: small;
+    padding-top: 20px;
+    line-height: 30px;
+    padding-bottom: 10px;
+}
+
+
 .contBtnVolver {
     display: flex;
     flex-direction: column;    
