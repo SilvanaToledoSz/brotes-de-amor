@@ -7,9 +7,7 @@ function gracias() {
     btnGracias.addEventListener("click", ()=> {
         location.href = "index.html"
 })
-
 }
-
 gracias()
 
 function mostrarCompra() {
@@ -28,13 +26,8 @@ let datos = clienteFinal.join("<br>")
         console.log(clienteObj[1])
         console.log(clienteObj[2])
         console.log(clienteObj[3])
-
-    }
-
+}
 mostrarCompra()
-
-
-
 
 //Aplicación de galería Luxon:
 
@@ -43,7 +36,6 @@ function fecha(){
     console.log( hoy.toString() )    
     fechaHoy.innerHTML = `<div>Fecha de compra: ${hoy.toLocaleString(DateTime.DATE_SHORT)}</div>`     
     const suma = hoy.plus({ days: 2 })   
-    fechaEntrega.innerHTML = `<div>Fecha de entrega: ${suma.toLocaleString(DateTime.DATE_SHORT)}</div>`
-     
+    fechaEntrega.innerHTML = `<div>Fecha de entrega: ${suma.toLocaleString(DateTime.DATE_SHORT)}</div>`     
 }
 fecha()

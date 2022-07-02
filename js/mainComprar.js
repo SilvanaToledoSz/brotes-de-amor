@@ -25,14 +25,9 @@ function bajarCarrito() {
         listadoCarrito.appendChild(contenedorCarrito)
 
     sumarProd(carritoLS)
-
-
 }
 
 bajarCarrito()
-
-
-
 
 //Suma los objetos de array y muestra valor total
 function sumarProd(prod) {    
@@ -49,7 +44,6 @@ function pagar() {
     btnComprar.addEventListener("click", ()=> {
         formu.className = "col-4 div__form mt-5 ms-5"
     })    
-
 }
 pagar()
 
@@ -71,11 +65,9 @@ volver()
 submit.addEventListener("mouseover", ()=> {
     submit.className = "btn btn-primary"
 })
-
 submit.addEventListener("mouseout", ()=> {
     submit.className = "btn btn-danger"
 })
-
 //Aplicación de galería SweetAlert:
 
 submit.addEventListener("click", (e)=> {
@@ -87,10 +79,7 @@ submit.addEventListener("click", (e)=> {
     let habilitarCompra = ((inputNombre.value =="") || (inputEmail.value =="") || (inputTelefono.value =="") || (inputFormaPago.value !="Mercado Pago") && (inputFormaPago.value !="Transferencia Bancaria")) ? true : false
     habilitarCompra ? alertaFinal() : location.href = "gracias.html" 
     debugger
-    datosCompra()
-    
-    
-
+    datosCompra()  
 })
 
 function alertaFinal(){
@@ -100,9 +89,7 @@ function alertaFinal(){
         icon: 'error',
         confirmButtonText: 'Terminar de completar'
     })  
-
 }
-
 
 inputNombre.addEventListener("input", ()=> {
     console.clear()
@@ -129,8 +116,7 @@ function datosCompra() {
     cliente.push(inputTelefono.value)
     cliente.push(inputFormaPago.value)
     console.log(cliente)
-    localStorage.setItem("subirCliente", JSON.stringify(cliente))  
-    
+    localStorage.setItem("subirCliente", JSON.stringify(cliente))      
 }
 
 

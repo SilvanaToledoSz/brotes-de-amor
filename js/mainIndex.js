@@ -41,11 +41,9 @@ function btnComprar() {
     let btnComprarHome = document.getElementById("btnComprarHome")      
 
         btnComprarHome.addEventListener("click", ()=> {
-            location.href = "comprar.html"
-            
+            location.href = "comprar.html"            
         }) 
 }
-
 btnComprar()
 
 //Función que carga el array Carrito. También sube la info a LocalStorage:
@@ -54,10 +52,7 @@ function agregarCarrito(id) {
     let almacenarProd = plantas.find(pl => pl.id === id)        
     carrito.push(almacenarProd)
     localStorage.setItem("subirCarrito", JSON.stringify(carrito))   
-    carritoHeader.innerHTML = carrito.length
-
-    
-
+    carritoHeader.innerHTML = carrito.length  
 }
 
 //Incorporación de librería toastify:
@@ -71,10 +66,7 @@ function notifCarrito(prod) {
         style: {
             background: "linear-gradient(to right, #D90429, #BA0323)",
           }
-
-
     }).showToast();
-
 }
 
 
