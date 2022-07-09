@@ -1,9 +1,11 @@
+//Función para mostrar la hora en tiempo real:
 setInterval(() => {    
     let hora = new Date();
     mostrarReloj.innerHTML = hora.toLocaleTimeString()
     }, 1000);
 
 
+//Función para que se vea el spinner:
 function spinnerH() {
     spinnerHome.innerHTML = `
     <div class="spinner-grow text-danger" role="status">
@@ -17,30 +19,22 @@ function spinnerH() {
     </div>`
     spinnerHome.className = "col-7 text-center"
 }
-
 spinnerH()
 
-
-setTimeout(() => {
-    spinnerHome.innerHTML = ""
-    spinnerHome.className = "spinnerNO"
+//Configuración de setTimeout para dar tiempo al servidor a responder:
+setTimeout(() => {    
     mostrarCards()     
-}, 1000);
-
-
+}, 500);
 
 
 // Muestra productos en el HTML
-function mostrarCards() {
+async function mostrarCards() {
 
-    
-    fetch(bd) 
-    .then( (resuesta) => resuesta.json())
-    .then( (base) => {
-
-    
-
-    base.forEach (el => {
+    //Llamo al archivo .json local donde está cargada la base de datos, aplicando una promesa:
+    await fetch(bd) 
+    .then( (respuesta) => respuesta.json())
+    .then( (base) => {        
+        base.forEach (el => {
         let div = document.createElement("div")
         div.className = "col"
         let {imgs, nombre, medida, valorNeto, id} = el
@@ -56,26 +50,27 @@ function mostrarCards() {
                                 
                             </div>
                         </div>`
-        listadoPlantas.appendChild(div)
+            listadoPlantas.appendChild(div)
 
-        //Vincula el botón de carrito con la carga de productos al array:
-
-        let btnCarrito = document.getElementById(`boton${el.id}`)      
-
-        btnCarrito.addEventListener("click", ()=> {
-            agregarCarrito(el.id)
-            notifCarrito(el.nombre)
-            
-        })
-
-        //Vincula el botón de comprar con la página donde se verá el resumen de carrito:
-
-        
-
+            //Vincula el botón de carrito con la carga de productos al array:
+            let btnCarrito = document.getElementById(`boton${el.id}`)
+            btnCarrito.addEventListener("click", ()=> {
+                agregarCarrito(el.id)
+                notifCarrito(el.nombre)            
+            }) 
+        })  
     })
-
-})
-
+    .catch ( (error)=> { 
+        listadoPlantas.className = "text-center mt-2 mb-1"
+        listadoPlantas.innerHTML = `<div>
+                                    <i class="fa-solid fa-heart-crack"></i>
+                                    <p class="text-center fs-6">El sitio está atravesando unos inconvenientes, <br>por favor, intentalo más tarde.</p>
+                                    </div>`
+    })
+    .finally ( ()=> {
+        spinnerHome.innerHTML = ""
+        spinnerHome.className = "spinnerNO"
+    })
 }
 
 
@@ -90,19 +85,15 @@ btnComprar()
 
 //Función que carga el array Carrito. También sube la info a LocalStorage:
 
-function agregarCarrito(id) {    
-    fetch(bd) 
+async function agregarCarrito(id) {    
+    await fetch(bd) 
     .then( (respuesta) => respuesta.json())
     .then( (base) => {
-
         let almacenarProd = base.find(pl => pl.id === id)        
         carrito.push(almacenarProd)
         localStorage.setItem("subirCarrito", JSON.stringify(carrito))   
-        carritoHeader.innerHTML = carrito.length  
-
+        carritoHeader.innerHTML = carrito.length 
     }) 
-
-    
 }
 
 //Incorporación de librería toastify:

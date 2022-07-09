@@ -1,3 +1,4 @@
+//Función para mostrar la hora en tiempo real:
 setInterval(() => {    
     let hora = new Date();
     mostrarReloj.innerHTML = hora.toLocaleTimeString()

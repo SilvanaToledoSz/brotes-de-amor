@@ -1,24 +1,32 @@
+//Función para mostrar la hora en tiempo real:
 setInterval(() => {    
     let hora = new Date();
     mostrarReloj.innerHTML = hora.toLocaleTimeString()
     }, 1000);
 
+//Función para que se vea el spinner:
 const espera = () => {
-    return `<div class="spinner-grow text-danger" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>`
+    return `
+    <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>`
 }
-
-
 
 //Función que toma el array subido a localstorage y la 'baja' para poder trabajarla en el nuevo HTML
 //Muestra en HTML los elementos cargados al array del carrito desde la página index.html 
 
 function bajarCarrito() {    
     recuento.className = "recuentoNO"
-    totalPagar.className = "recuentoNO"
+    totalPagar.className = "recuentoNO"    
     spinner.innerHTML = espera()
     
+    //Aplico setTimeout para dar tiempo a que el sistema procese la respuesta:
     setTimeout(() => {
         spinner.innerHTML = ""
         spinner.className = "spinnerNO"
@@ -47,9 +55,11 @@ function bajarCarrito() {
 
         sumarProd(carritoLS)
 
-    }, 2000);
+        pagar()
 
-    
+        volver()
+
+    }, 1000);    
 }
 
 bajarCarrito()
@@ -63,26 +73,26 @@ function sumarProd(prod) {
 //Habilita el form desde el cual se enviarán datos.
 function pagar() {
     let btnComprar = document.createElement("div")
-        btnComprar.innerHTML = `<button type="button" class="btn btn-danger btnComprar">Pagar</button>`
+        btnComprar.innerHTML = `<button type="button" class="animate__animated animate__fadeInUp btn btn-danger btnComprar">Pagar</button>`
     divComprar.appendChild(btnComprar)
 
     btnComprar.addEventListener("click", ()=> {
         formu.className = "col-4 div__form mt-5 ms-5 animate__animated animate__bounceInRight"
     })    
 }
-pagar()
+
 
 //Botón para volver a la página previa y reiniciar la compra:
 function volver() {
     let btnVolver = document.createElement("div")
-        btnVolver.innerHTML = `<button type="button" class="btn btn-danger btnVolver" title ="Reiniciar compra"><i class="fa-solid fa-arrow-rotate-left text-light"></i></button>`
+        btnVolver.innerHTML = `<button type="button" class="animate__animated animate__fadeInUp btn btn-danger btnVolver" title ="Reiniciar compra"><i class="fa-solid fa-arrow-rotate-left text-light"></i></button>`
     divVolver.appendChild(btnVolver)
 
     btnVolver.addEventListener("click", ()=> {
         location.href = "index.html"
     })        
 }
-volver()
+
 
 
 /* Eventos del Formulario */
