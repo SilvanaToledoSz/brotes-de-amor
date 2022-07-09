@@ -1,9 +1,15 @@
 // Muestra productos en el HTML
 function mostrarCards() {
-    plantas.forEach (el => {
+    fetch('/base.json') 
+    .then( (res) => res.json())
+    .then( (data) => {
+
+    
+
+    data.forEach (el => {
         let div = document.createElement("div")
         div.className = "col"
-        const {imgs, nombre, medida, valorNeto, id} = el
+        let {imgs, nombre, medida, valorNeto, id} = el
         div.innerHTML = `<div class="card">                    
                             <img src="${imgs}" class="card-img-top div__img--producto">
                             <div class="card-body">
@@ -33,6 +39,9 @@ function mostrarCards() {
         
 
     })
+
+})
+
 }
 
 mostrarCards()
@@ -49,10 +58,18 @@ btnComprar()
 //Función que carga el array Carrito. También sube la info a LocalStorage:
 
 function agregarCarrito(id) {    
-    let almacenarProd = plantas.find(pl => pl.id === id)        
-    carrito.push(almacenarProd)
-    localStorage.setItem("subirCarrito", JSON.stringify(carrito))   
-    carritoHeader.innerHTML = carrito.length  
+    fetch('/base.json') 
+    .then( (res) => res.json())
+    .then( (data) => {
+
+        let almacenarProd = data.find(pl => pl.id === id)        
+        carrito.push(almacenarProd)
+        localStorage.setItem("subirCarrito", JSON.stringify(carrito))   
+        carritoHeader.innerHTML = carrito.length  
+
+    }) 
+
+    
 }
 
 //Incorporación de librería toastify:
