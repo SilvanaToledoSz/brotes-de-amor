@@ -1,30 +1,55 @@
+setInterval(() => {    
+    let hora = new Date();
+    mostrarReloj.innerHTML = hora.toLocaleTimeString()
+    }, 1000);
+
+const espera = () => {
+    return `<div class="spinner-grow text-danger" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>`
+}
+
+
+
 //Función que toma el array subido a localstorage y la 'baja' para poder trabajarla en el nuevo HTML
 //Muestra en HTML los elementos cargados al array del carrito desde la página index.html 
 
 function bajarCarrito() {    
+    recuento.className = "recuentoNO"
+    totalPagar.className = "recuentoNO"
+    spinner.innerHTML = espera()
+    
+    setTimeout(() => {
+        spinner.innerHTML = ""
+        spinner.className = "spinnerNO"
+        recuento.className = "recuento animate__animated animate__fadeInUp"
+        totalPagar.className = "col-12 text-center recuento animate__animated animate__fadeInUp"
+        let contenedorCarrito = document.createElement("table")
+        contenedorCarrito.className = "tabla_carrito animate__animated animate__fadeInUp"
+        let filas = ""
+        let carritoLS = JSON.parse(localStorage.getItem("subirCarrito")) || ["Carrito vacío"]
+            for (item of carritoLS) {
+                const {id, nombre, valorNeto, medida} = item 
+                filas += `
+                        <tr id="tr_carrito${id}">
+                            <td class="td_carrito">${nombre}</td>
+                            <td class="td_carrito">$ ${valorNeto}</td>
+                            <td class="td_carrito">${medida}</td>                        
+                        </tr>
+                        <tr>
+                            <td colspan=3>
+                            <hr>
+                            </td>
+                        </tr>`
+            }
+            contenedorCarrito.innerHTML = filas
+            listadoCarrito.appendChild(contenedorCarrito)
 
-    let contenedorCarrito = document.createElement("table")
-    contenedorCarrito.className = "tabla_carrito"
-    let filas = ""
-    let carritoLS = JSON.parse(localStorage.getItem("subirCarrito")) || ["Carrito vacío"]
-        for (item of carritoLS) {
-            const {id, nombre, valorNeto, medida} = item 
-            filas += `
-                    <tr id="tr_carrito${id}">
-                        <td class="td_carrito">${nombre}</td>
-                        <td class="td_carrito">$ ${valorNeto}</td>
-                        <td class="td_carrito">${medida}</td>                        
-                    </tr>
-                    <tr>
-                        <td colspan=3>
-                        <hr>
-                        </td>
-                    </tr>`
-        }
-        contenedorCarrito.innerHTML = filas
-        listadoCarrito.appendChild(contenedorCarrito)
+        sumarProd(carritoLS)
 
-    sumarProd(carritoLS)
+    }, 2000);
+
+    
 }
 
 bajarCarrito()
@@ -42,7 +67,7 @@ function pagar() {
     divComprar.appendChild(btnComprar)
 
     btnComprar.addEventListener("click", ()=> {
-        formu.className = "col-4 div__form mt-5 ms-5"
+        formu.className = "col-4 div__form mt-5 ms-5 animate__animated animate__bounceInRight"
     })    
 }
 pagar()

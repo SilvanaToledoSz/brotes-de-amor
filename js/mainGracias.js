@@ -1,3 +1,8 @@
+setInterval(() => {    
+    let hora = new Date();
+    mostrarReloj.innerHTML = hora.toLocaleTimeString()
+    }, 1000);
+
 function gracias() {
     let btnGracias = document.createElement("div")
     btnGracias.className = "btnGracias"

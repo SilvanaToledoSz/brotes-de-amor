@@ -18,6 +18,8 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- Fonts Awesome -->
     <script src="https://kit.fontawesome.com/3981ea7616.js" crossorigin="anonymous"></script>    
+    <!-- Animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Brotes de amor</title>
 </head>
 
@@ -26,6 +28,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><img class="nav__img--logo" src="imgs/logo_tn.png" alt="Logo Brotes de Amor"></a>
             <div class="header-compra">
+                <span id="hora" class="hora"></span>
                 <i class="fa-solid fa-cart-shopping text-dark text-center ps-2 pe-2"></i>                
                 <span id="carritoHeader" type="button" class="ps-2 pe-2"></span>
                 <button id="btnComprarHome" type="button" class="btn btn-danger btn-sm div__btnComprar" style="background-color: #D90429;">Comprar</button>                
@@ -43,6 +46,8 @@
 
         <!-- Inicio Catálogo -->
             <h1 class="text-center mt-5 mb-5">Catálogo de productos</h1>
+        </div>
+        <div id="spinnerHome">
         </div>
         <div class="col-7"> 
             <div class="row row-cols-1 row-cols-md-3 g-4" id="listadoPlantas">

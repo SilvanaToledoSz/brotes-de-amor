@@ -90,6 +90,10 @@ h1 {
     
 }
 
+.hora {
+    font-size: small;
+}
+
 /* Class card en JS - mainIndex */
 
 .div__img--producto {
@@ -135,6 +139,10 @@ h1 {
 
 /* mainComprar JS */
 
+.spinnerNO {
+    display: none;
+}
+
 .tabla_carrito {
     width: 100%;
     margin: 20px 0;
@@ -170,6 +178,10 @@ h1 {
 
 
 /* Comprar HTML */
+
+.recuentoNO {
+    display: none;
+}
 
 .recuento {
     margin-top: 10px;

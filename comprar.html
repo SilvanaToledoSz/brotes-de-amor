@@ -16,13 +16,16 @@
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
     <!-- Fonts Awesome -->
     <script src="https://kit.fontawesome.com/3981ea7616.js" crossorigin="anonymous"></script>    
+    <!-- Animaciones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Brotes de amor</title>
 </head>
 <header class="container-fluid sticky-top">
     <nav class="navbar navbar-expand-lg bg-light navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><img class="nav__img--logo" src="imgs/logo_tn.png" alt="Logo Brotes de Amor"></a>
-            <div class="header-compra">                
+            <div class="header-compra">
+                <span id="hora" class="hora"></span>                     
             </div>
         </div>
     </nav>
@@ -36,14 +39,15 @@
             <h1 class="text-center">¡Ya casi es tuyo!</h1>
         </div>
         <!-- Inicio carrito -->
-        <div class="col-5 mt-5 row text-center">            
+        <div class="col-5 mt-5 row text-center">
+            <div class="col-12 mb-5" id="spinner"></div>            
             <div class="col-12">
-                <p class="recuento"><i class="fa-solid fa-cart-shopping text-dark text-center ps-2 pe-2"></i>Productos en carrito: <span id="contadorProd">0</span></p>
+                <p id="recuento"><i class="fa-solid fa-cart-shopping text-dark text-center ps-2 pe-2"></i>Productos en carrito: <span id="contadorProd">0</span></p>
             </div>
             <div class="col-12 text-left" id="listadoCarrito">            
                 <!-- Agrega acá los productos -->                
             </div>
-            <div class="col-12 text-center recuento">
+            <div id="totalPagar">
                 <p>Total a pagar:</p>
                 <p>$ 
                     <span id="valorTotal">

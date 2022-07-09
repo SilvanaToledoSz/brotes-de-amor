@@ -1,16 +1,50 @@
+setInterval(() => {    
+    let hora = new Date();
+    mostrarReloj.innerHTML = hora.toLocaleTimeString()
+    }, 1000);
+
+
+function spinnerH() {
+    spinnerHome.innerHTML = `
+    <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="spinner-grow text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>`
+    spinnerHome.className = "col-7 text-center"
+}
+
+spinnerH()
+
+
+setTimeout(() => {
+    spinnerHome.innerHTML = ""
+    spinnerHome.className = "spinnerNO"
+    mostrarCards()     
+}, 1000);
+
+
+
+
 // Muestra productos en el HTML
 function mostrarCards() {
-    fetch('/base.json') 
-    .then( (res) => res.json())
-    .then( (data) => {
+
+    
+    fetch(bd) 
+    .then( (resuesta) => resuesta.json())
+    .then( (base) => {
 
     
 
-    data.forEach (el => {
+    base.forEach (el => {
         let div = document.createElement("div")
         div.className = "col"
         let {imgs, nombre, medida, valorNeto, id} = el
-        div.innerHTML = `<div class="card">                    
+        div.innerHTML = `<div class="card animate__animated animate__fadeInUp">                    
                             <img src="${imgs}" class="card-img-top div__img--producto">
                             <div class="card-body">
                                 <h5 class="div__h5--prod">${nombre}</h5>                                
@@ -44,7 +78,6 @@ function mostrarCards() {
 
 }
 
-mostrarCards()
 
 function btnComprar() {
     let btnComprarHome = document.getElementById("btnComprarHome")      
@@ -58,11 +91,11 @@ btnComprar()
 //Función que carga el array Carrito. También sube la info a LocalStorage:
 
 function agregarCarrito(id) {    
-    fetch('/base.json') 
-    .then( (res) => res.json())
-    .then( (data) => {
+    fetch(bd) 
+    .then( (respuesta) => respuesta.json())
+    .then( (base) => {
 
-        let almacenarProd = data.find(pl => pl.id === id)        
+        let almacenarProd = base.find(pl => pl.id === id)        
         carrito.push(almacenarProd)
         localStorage.setItem("subirCarrito", JSON.stringify(carrito))   
         carritoHeader.innerHTML = carrito.length  
