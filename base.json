@@ -114,13 +114,6 @@
       "inputTelefono": "987654321",
       "inputFormaPago": "Transferencia Bancaria",
       "id": 2
-    },
-    {
-      "inputNombre": "Silvana Toledo",
-      "inputEmail": "silvana.toledo.sz@gmail.com",
-      "inputTelefono": "1557464727",
-      "inputFormaPago": "Mercado Pago",
-      "id": 3
     }
   ]
 }
