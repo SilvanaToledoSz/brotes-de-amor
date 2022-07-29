@@ -40,7 +40,7 @@ function bajarCarrito() {
                 //Muestra en HTML los elementos que fueron cargados al array del carrito desde index.html
                 const {id, imgs, nombre, valorNeto, medida} = item 
                 card.innerHTML = `
-                        <div class="tabla_carrito">
+                        <div class="tabla_carrito container">
                             <span class="td_carrito1 text-center"><img src="${imgs}" class="card-img-top div__img--producto_carrito"></span>
                             <span class="td_carrito2 text-center">${nombre}</span>
                             <span class="td_carrito3 text-center">$ ${valorNeto}</span>

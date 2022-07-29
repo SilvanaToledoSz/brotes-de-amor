@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "rosal",
-      "valorNeto": 1200,
+      "valorNeto": 3200,
       "medida": "L",
       "stock": 13,
       "vendido": false,
@@ -14,7 +14,7 @@
     {
       "id": 2,
       "nombre": "begonia",
-      "valorNeto": 750,
+      "valorNeto": 1750,
       "medida": "M",
       "stock": 25,
       "vendido": false,
@@ -25,18 +25,18 @@
     {
       "id": 3,
       "nombre": "malvon",
-      "valorNeto": 525,
+      "valorNeto": 925,
       "medida": "S",
       "stock": 10,
       "vendido": false,
       "precioUnidades": 0,
-      "tipo": "Planta",
+      "tipo": "Flor",
       "imgs": "https://silvanatoledosz.github.io/brotes-de-amor/imgs/producto3.jpg"
     },
     {
       "id": 4,
       "nombre": "ficus",
-      "valorNeto": 2200,
+      "valorNeto": 4200,
       "medida": "L",
       "stock": 1,
       "vendido": false,
@@ -47,7 +47,7 @@
     {
       "id": 5,
       "nombre": "rosario bananita",
-      "valorNeto": 450,
+      "valorNeto": 650,
       "medida": "S",
       "stock": 15,
       "vendido": false,
@@ -58,14 +58,48 @@
     {
       "id": 6,
       "nombre": "cactus espiralado",
-      "valorNeto": 250,
+      "valorNeto": 550,
       "medida": "M",
       "stock": 7,
       "vendido": false,
       "precioUnidades": 0,
       "tipo": "Cactus",
       "imgs": "https://silvanatoledosz.github.io/brotes-de-amor/imgs/producto6.jpg"
+    },
+    {
+      "id": 7,
+      "nombre": "spathipyllum",
+      "valorNeto": 1250,
+      "medida": "M",
+      "stock": 7,
+      "vendido": false,
+      "precioUnidades": 0,
+      "tipo": "Planta",
+      "imgs": "https://silvanatoledosz.github.io/brotes-de-amor/imgs/producto7.jpg"
+    },
+    {
+      "id": 8,
+      "nombre": "hipoestes",
+      "valorNeto": 1100,
+      "medida": "M",
+      "stock": 7,
+      "vendido": false,
+      "precioUnidades": 0,
+      "tipo": "Planta",
+      "imgs": "https://silvanatoledosz.github.io/brotes-de-amor/imgs/producto8.jpg"
+    },
+    {
+      "id": 9,
+      "nombre": "photus",
+      "valorNeto": 900,
+      "medida": "M",
+      "stock": 7,
+      "vendido": false,
+      "precioUnidades": 0,
+      "tipo": "Planta",
+      "imgs": "https://silvanatoledosz.github.io/brotes-de-amor/imgs/producto9.jpg"
     }
+
   ],
   "compradores": [
     {
@@ -95,6 +129,13 @@
       "inputTelefono": "1557464727",
       "inputFormaPago": "Transferencia Bancaria",
       "id": 4
+    },
+    {
+      "inputNombre": "Silvana Toledo",
+      "inputEmail": "asd@gmail.com",
+      "inputTelefono": "1557464727",
+      "inputFormaPago": "Mercado Pago",
+      "id": 5
     }
   ]
 }
