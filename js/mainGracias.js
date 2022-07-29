@@ -46,7 +46,6 @@ mostrarDatosComprador()
 //Aplicación de galería Luxon:
 function fecha(){
     const hoy = DateTime.now()
-    console.log( hoy.toString() )    
     fechaHoy.innerHTML = `<div>Fecha de compra: ${hoy.toLocaleString(DateTime.DATE_SHORT)}</div>`     
     const suma = hoy.plus({ days: 2 })   
     fechaEntrega.innerHTML = `<div>Fecha de entrega: ${suma.toLocaleString(DateTime.DATE_SHORT)}</div>`     

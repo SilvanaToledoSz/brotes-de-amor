@@ -260,6 +260,11 @@ h1 {
     margin-bottom: 20px;
 }
 
+.div__p--prod {
+    color: #D90429;
+    font-weight: 400;
+}
+
 .datosCompra {
     font-size: small;
     padding-top: 20px;

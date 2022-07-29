@@ -150,6 +150,7 @@ async function datosComprador() {
         location.href = "gracias.html"
     } catch(error){
         let mensaje = error.statusText || 'Error'
-        console.log(mensaje)
+        let informe = document.getElementById("informe")
+        informe.innerHTML = `${mensaje}`
     }
 }

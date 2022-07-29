@@ -99,43 +99,28 @@
       "tipo": "Planta",
       "imgs": "https://silvanatoledosz.github.io/brotes-de-amor/imgs/producto9.jpg"
     }
-
   ],
   "compradores": [
     {
-      "inputNombre": "Silvana Toledo",
-      "inputEmail": "silvana.toledo.sz@gmail.com",
-      "inputTelefono": "1557464727",
+      "inputNombre": "Usuario prueba 1",
+      "inputEmail": "prueba1@gmail.com",
+      "inputTelefono": "123456789",
       "inputFormaPago": "Transferencia Bancaria",
       "id": 1
     },
     {
-      "inputNombre": "Julián Roel",
-      "inputEmail": "mr.roel@gmail.com",
-      "inputTelefono": "123456789",
+      "inputNombre": "Usuario prueba 2",
+      "inputEmail": "prueba2@gmail.com",
+      "inputTelefono": "987654321",
       "inputFormaPago": "Transferencia Bancaria",
       "id": 2
     },
     {
       "inputNombre": "Silvana Toledo",
-      "inputEmail": "asdasdasdasdas@gmail.com",
+      "inputEmail": "silvana.toledo.sz@gmail.com",
       "inputTelefono": "1557464727",
       "inputFormaPago": "Mercado Pago",
       "id": 3
-    },
-    {
-      "inputNombre": "Silvana Toledo",
-      "inputEmail": "silvana.toledo.sz@gmail.com",
-      "inputTelefono": "1557464727",
-      "inputFormaPago": "Transferencia Bancaria",
-      "id": 4
-    },
-    {
-      "inputNombre": "Silvana Toledo",
-      "inputEmail": "asd@gmail.com",
-      "inputTelefono": "1557464727",
-      "inputFormaPago": "Mercado Pago",
-      "id": 5
     }
   ]
 }
