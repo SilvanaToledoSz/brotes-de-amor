@@ -94,6 +94,13 @@ h1 {
     font-size: small;
 }
 
+/* Botones filtro */
+.btn-filtro {
+    width: 12%;
+    font-size: x-small;
+    font-weight: 600;
+}
+
 /* Class card en JS - mainIndex */
 
 .div__img--producto {
@@ -143,17 +150,59 @@ h1 {
     display: none;
 }
 
+
+
 .tabla_carrito {
     width: 100%;
     margin: 20px 0;
-}
-
-.td_carrito {
-    width: 30%;
-    font-size: 15px;
-    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    column-gap: 2%;
+    grid-template-areas: 
+    "prod1 prod2 prod3 prod4 prod5";
     
 }
+
+.td_carrito1 {
+    grid-area: prod1;    
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.td_carrito2 {
+    grid-area: prod2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.td_carrito3 {
+    grid-area: prod3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.td_carrito4 {
+    grid-area: prod4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+.td_carrito5 {
+    grid-area: prod5;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+
 
 .chauCarrito {
     display: none;
@@ -199,8 +248,19 @@ h1 {
     font-size: 16px;
 }
 
+.btn_form {
+    background-color: #D90429;
+}
+
 .fuente-input {
     font-size: 12px;
+}
+
+.div__img--producto_carrito {
+    width: 70px;
+    height: 70px;
+    border-radius: 10%;
+    object-fit: cover;
 }
 
 /* Gracias HTML */

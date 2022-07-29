@@ -3,8 +3,7 @@ let carrito = []
 let carritoLS = []
 
 //Array de elementos
-let cliente = []
-let clienteFinal = []
+let tipoPlantas = ['Flor', 'Planta', 'Arbol', 'Suculenta', 'Cactus', 'Todas']
 
 
 

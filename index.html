@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/stylesheet.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- Javascript -->        
-    <script defer src="js/variablesIndex.js"></script>    
-    <script defer src="js/arraysIndex.js"></script>        
+    <script defer src="js/variables.js"></script>    
+    <script defer src="js/arrays.js"></script>        
     <script defer src="js/mainIndex.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -31,7 +31,7 @@
                 <span id="hora" class="hora"></span>
                 <i class="fa-solid fa-cart-shopping text-dark text-center ps-2 pe-2"></i>                
                 <span id="carritoHeader" type="button" class="ps-2 pe-2"></span>
-                <button id="btnComprarHome" type="button" class="btn btn-danger btn-sm div__btnComprar" style="background-color: #D90429;">Comprar</button>                
+                <button id="btnComprarHome" type="button" class="recuentoNO" style="background-color: #D90429;">Comprar</button>                
             </div>
         </div>
     </nav>
@@ -50,7 +50,12 @@
         <div id="spinnerHome">
         </div>
         <div class="col-7"> 
-            <div class="row row-cols-1 row-cols-md-3 g-4" id="listadoPlantas">
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center mb-3" id="filtro">
+
+                <!-- Acá se insertan los botones de filtro -->
+                
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4 " id="listadoPlantas">
 
                 <!-- Acá se insertan las tarjetas de productos desde el js -->
                 

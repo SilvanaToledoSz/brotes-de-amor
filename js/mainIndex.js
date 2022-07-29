@@ -4,7 +4,6 @@ setInterval(() => {
     mostrarReloj.innerHTML = hora.toLocaleTimeString()
     }, 1000);
 
-
 //Función para que se vea el spinner:
 function spinnerH() {
     spinnerHome.innerHTML = `
@@ -30,11 +29,27 @@ setTimeout(() => {
 // Muestra productos en el HTML
 async function mostrarCards() {
 
-    //Llamo al archivo .json local donde está cargada la base de datos, aplicando una promesa:
+    //Llamo al archivo .json donde está cargada la base de datos, aplicando una promesa:
     await fetch(bd) 
     .then( (respuesta) => respuesta.json())
-    .then( (base) => {        
-        base.forEach (el => {
+    .then( (base) => {
+        
+        filtro()        
+        mostrarCardsInterno(base)        
+    })
+    .catch ( (error)=> { 
+        contenidoCatch()
+
+    })
+    .finally ( ()=> {
+        contenidoFinaly()
+    })
+}
+
+
+// Código interno para mostrar cards y reducir código:
+function mostrarCardsInterno(id) {
+    id.forEach (el => {
         let div = document.createElement("div")
         div.className = "col"
         let {imgs, nombre, medida, valorNeto, id} = el
@@ -50,54 +65,57 @@ async function mostrarCards() {
                                 
                             </div>
                         </div>`
-            listadoPlantas.appendChild(div)
-
-            //Vincula el botón de carrito con la carga de productos al array:
-            let btnCarrito = document.getElementById(`boton${el.id}`)
-            btnCarrito.addEventListener("click", ()=> {
-                agregarCarrito(el.id)
-                notifCarrito(el.nombre)            
-            }) 
-        })  
-    })
-    .catch ( (error)=> { 
-        listadoPlantas.className = "text-center mt-2 mb-1"
-        listadoPlantas.innerHTML = `<div>
-                                    <i class="fa-solid fa-heart-crack"></i>
-                                    <p class="text-center fs-6">El sitio está atravesando unos inconvenientes, <br>por favor, intentalo más tarde.</p>
-                                    </div>`
-    })
-    .finally ( ()=> {
-        spinnerHome.innerHTML = ""
-        spinnerHome.className = "spinnerNO"
+        listadoPlantas.appendChild(div)
+        
+        //Vincula el botón de carrito con la carga de productos al array:
+        let btnCarrito = document.getElementById(`boton${el.id}`)
+        btnCarrito.addEventListener("click", ()=> {
+            agregarCarrito(el.id)
+            notifCarrito(el.nombre)            
+        }) 
     })
 }
 
-
-function btnComprar() {
-    let btnComprarHome = document.getElementById("btnComprarHome")      
-
+// Función para el botón Comprar del index
+function btnComprar() {     
         btnComprarHome.addEventListener("click", ()=> {
             location.href = "comprar.html"            
         }) 
 }
 btnComprar()
 
-//Función que carga el array Carrito. También sube la info a LocalStorage:
+// Función para reducir código de catch:
+function contenidoCatch() {
+    listadoPlantas.className = "text-center mt-2 mb-1"
+    listadoPlantas.innerHTML = `<div>
+                                <i class="fa-solid fa-heart-crack"></i>
+                                <p class="text-center fs-6">El sitio está atravesando unos inconvenientes, <br>por favor, intentalo más tarde.</p>
+                                </div>`
+}
 
+// Función para reducir el código de finaly
+function contenidoFinaly() {
+    spinnerHome.innerHTML = ""
+    spinnerHome.className = "spinnerNO"
+}
+
+//Función que carga el array Carrito. También sube la info a LocalStorage:
 async function agregarCarrito(id) {    
     await fetch(bd) 
     .then( (respuesta) => respuesta.json())
     .then( (base) => {
         let almacenarProd = base.find(pl => pl.id === id)        
         carrito.push(almacenarProd)
-        localStorage.setItem("subirCarrito", JSON.stringify(carrito))   
-        carritoHeader.innerHTML = carrito.length 
-    }) 
+        localStorage.setItem("subirCarrito", JSON.stringify(carrito))        
+        
+        if (carrito.length > 0) {
+            btnComprarHome.className = "btn btn-danger btn-sm div__btnComprar"
+        }   
+        carritoHeader.innerHTML = carrito.length
+    })     
 }
 
-//Incorporación de librería toastify:
-
+//Incorporación de librería Toastify:
 function notifCarrito(prod) {
     Toastify({
         text: `Agregaste ${prod}`,
@@ -110,8 +128,36 @@ function notifCarrito(prod) {
     }).showToast();
 }
 
-
-
-
+//Filtro para los diferentes tipos de productos:
+function filtro() {
+    tipoPlantas.forEach( tipo => {
+        const btn = document.createElement('button');
+        btn.innerHTML = tipo;
+        btn.classList.add('btn', 'btn-danger', 'm-2', 'btn-filtro', 'animate__animated', 'animate__fadeInUp')    
+        btn.addEventListener('click', ()=> {
+            if(tipo === 'Todas') {
+                listadoPlantas.innerHTML = ""
+                fetch(bd)
+                .then((response)=> response.json())
+                .then(base => {
+                    mostrarCardsInterno(base)
+                    })
+                    .catch((err) => contenidoCatch())
+                    .finally(() => contenidoFinaly())
+            } else {
+                fetch(bd)
+                .then((response)=> response.json())
+                .then(base => {
+                    const plantFiltrados = base.filter(pl => pl.tipo === tipo)
+                    listadoPlantas.innerHTML = ""
+                    mostrarCardsInterno(plantFiltrados)
+                })
+                .catch((err) => contenidoCatch())
+                .finally(() => contenidoFinaly())
+            }
+        })
+        document.querySelector('#filtro').appendChild(btn)    
+    })
+}
 
 
